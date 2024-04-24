@@ -1,6 +1,13 @@
 //Solicitar valores de simulación
 
-const TipoVehiculo = parseInt(prompt("Qué tipo de vehículo quieres? \n\n1.Carro\n2.Moto"));
+let TipoVehiculo;
+
+do {
+    TipoVehiculo = parseFloat(prompt("Qué tipo de vehículo quieres? \n\n1.Carro\n2.Moto"));
+   if (isNaN(TipoVehiculo)) {
+       alert("Por favor, ingrese un número válido.");
+   }
+} while (isNaN(TipoVehiculo));
 if (TipoVehiculo == 1) {
     let Valor = parseFloat(prompt("Cuánto es el valor aproximado del carro?\nIngrese el valor en pesos Colombianos"));
     let CuotaInicial = parseFloat(prompt("Ingresa tu cuota inicial\nIngrese el valor en pesos Colombianos"));
